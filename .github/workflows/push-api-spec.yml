@@ -15,9 +15,9 @@ jobs:
       - name: checkout
         if: github.event.pull_request.merged == true
         uses: actions/checkout@v1
-      - name: spec-push
+      - name: push-api-spec
         if: github.event.pull_request.merged == true
-        uses: ./.github/actions/fortellis-spec-push-action
+        uses: Fortellis/api-spec-push-action@master
         with:
           fortellis_username: "${{ secrets.FORTELLIS_USERNAME }}"
           fortellis_password: "${{ secrets.FORTELLIS_PASSWORD }}"
