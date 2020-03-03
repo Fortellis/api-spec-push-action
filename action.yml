@@ -1,5 +1,8 @@
 name: 'Fortellis Spec Push'
 description: 'Action to facilitate automatically pushing Fortellis API Specs within a Fortellis Spec Repository'
+branding:
+  icon: airplay
+  color: purple
 inputs:
   fortellis_username:
     description: 'Fortellis username'
