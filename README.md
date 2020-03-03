@@ -36,23 +36,6 @@ jobs:
 
 * fortellis_username - The username of the Fortellis account that will own the API specification
 * fortellis_password - The password of the Fortellis account that will own the API specification
-  
-  ```yaml
-  on:
-    pull_request:
-      types: [closed]
-  jobs:
-    push:
-      steps:
-      - uses: fortellis/spec-push@v1
-      - name: Fortellis Spec Push
-          if: github.event.pull_request.merged == true
-        with:
-          fortellis_username: ${{ secrets.FORTELLIS_USERNAME }}
-          fortellis_password: ${{ secrets.FORTELLIS_PASSWORD }}
-  +       spec_files:
-  +         - specs/appointments-v1.yaml
-  ```
 
 ## Output
 
