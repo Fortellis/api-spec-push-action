@@ -1,0 +1,23 @@
+name: Push Spec
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        if: github.event.pull_request.merged == true
+        uses: actions/checkout@v1
+      - name: spec-push
+        if: github.event.pull_request.merged == true
+        uses: ./.github/actions/fortellis-spec-push-action
+        with:
+          fortellis_username: "${{ secrets.FORTELLIS_USERNAME }}"
+          fortellis_password: "${{ secrets.FORTELLIS_PASSWORD }}"

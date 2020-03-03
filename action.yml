@@ -1,0 +1,13 @@
+name: 'Fortellis Spec Push'
+description: 'Action to facilitate automatically pushing Fortellis API Specs within a Fortellis Spec Repository'
+inputs:
+  fortellis_username:
+    description: 'Fortellis username'
+    required: true
+  fortellis_password:
+    description: 'Fortellis password'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
